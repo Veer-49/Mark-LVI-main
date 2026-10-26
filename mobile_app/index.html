@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="theme-color" content="#1a1a2e">
+    <title>JARVIS Mobile</title>
+    <link rel="manifest" href="manifest.json">
+    <link rel="apple-touch-icon" href="icon-192.png">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-content">
+                <div class="status-indicator" id="statusIndicator">
+                    <span class="status-dot"></span>
+                    <span class="status-text">Connecting...</span>
+                </div>
+                <h1 class="app-title">JARVIS</h1>
+                <button class="settings-btn" id="settingsBtn">⚙️</button>
+            </div>
+        </header>
+
+        <!-- Chat Area -->
+        <div class="chat-container" id="chatContainer">
+            <div class="welcome-message">
+                <div class="avatar">🤖</div>
+                <div class="message-content">
+                    <p>Welcome Veer Sir. I'm JARVIS, your AI assistant.</p>
+                    <p class="hint">Tap the microphone to speak or type a message below.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Input Area -->
+        <div class="input-area">
+            <div class="input-container">
+                <input 
+                    type="text" 
+                    class="message-input" 
+                    id="messageInput" 
+                    placeholder="Type a message..."
+                    autocomplete="off"
+                >
+                <button class="voice-btn" id="voiceBtn">
+                    <span class="voice-icon">🎤</span>
+                </button>
+                <button class="send-btn" id="sendBtn">
+                    <span class="send-icon">➤</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Settings Modal -->
+        <div class="modal" id="settingsModal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2>Settings</h2>
+                    <button class="close-btn" id="closeSettings">✕</button>
+                </div>
+                <div class="modal-body">
+                    <div class="setting-group">
+                        <label for="serverUrl">JARVIS Server URL</label>
+                        <input 
+                            type="url" 
+                            id="serverUrl" 
+                            value="http://192.168.1.16:8000"
+                            placeholder="http://192.168.1.16:8000"
+                        >
+                    </div>
+                    <div class="setting-group">
+                        <label for="pairingKey">Pairing Key (if required)</label>
+                        <input 
+                            type="text" 
+                            id="pairingKey" 
+                            placeholder="Enter pairing key"
+                        >
+                    </div>
+                    <button class="save-btn" id="saveSettings">Save Settings</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Voice Recording Indicator -->
+        <div class="voice-indicator" id="voiceIndicator">
+            <div class="pulse-ring"></div>
+            <div class="pulse-ring"></div>
+            <div class="pulse-ring"></div>
+            <span class="listening-text">Listening...</span>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
